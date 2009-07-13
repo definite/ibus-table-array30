@@ -1,0 +1,11 @@
+ibus-array30:
+Ding-Yi Chen <dchen at redhat.com>
+
+Acknowledge:
+-----------
+array30.cin is from OpenVanilla project. 
+
+Ming-De Liaw (廖明德): Original Array30 input method author.
+Anthony Fok (霍東靈) <foka@debian.org>: Exported the file to plain text.
+gontera (葉光哲): Made the array30.cin
+
