@@ -1,7 +1,9 @@
-Name:       ibus-table-array30
-Version:    1.2.0.20090713
-Release:    1%{?dist}
-Summary:     Array30 Chinese input method
+Name:       @PROJECT_NAME@
+Version:    @PRJ_VER@
+Release:    @PRJ_VER_RELEASE@%{?dist}
+Summary:    @PROJECT_SUMMARY@
+Summary(zh_CN): 使用 ibus-table 的行列输入法
+Summary(zh_TW): 使用 ibus-table 的行列輸入法
 License:    GPLv2+
 Group:      System Environment/Libraries
 URL:        http://github.com/definite/ibus-table-array30/tree/master
@@ -9,14 +11,22 @@ Source0:    %{name}-%{version}-Source.tar.gz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:  noarch
 
-BuildRequires:  ibus-table >= 1.1
+BuildRequires:  ibus-table >= 1.2
 BuildRequires:  cmake >= 2.4
-Requires:  ibus-table >= 1.1
-Requires(post):  ibus-table >= 1.1
+Requires:  ibus-table >= 1.2
+Requires(post):  ibus-table >= 1.2
 
 %description
-The Chewing engine for IBus platform. It provides Chinese input method from
-libchewing.
+The Array 30 Chinese input method for ibus-table. 
+It covers more than 70 thousands Chinese characters,
+which are listed in unicode 3.1,
+
+
+%description -l zh_CN
+使用 ibus-table 的行列输入法。這个版本包含了Unicode 3.1 約七万多字。
+
+%description -l zh_TW
+使用 ibus-table 的行列輸入法。這個版本包含了Unicode 3.1 約七萬餘字。
 
 %prep
 %setup -q -n %{name}-%{version}-Source
@@ -42,10 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/ibus-table/icons/Array30.png
 
 %changelog
-* Mon Jul 13 2009 Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090713-1
-
-
-
-
-
+@RPM_CHANGELOG@
 

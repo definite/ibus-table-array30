@@ -1,5 +1,5 @@
 PRJ_VER=1.2.0.20090713
 SUMMARY=Initial submit
 # Changes
-Initial submit
+Initial submit.
 

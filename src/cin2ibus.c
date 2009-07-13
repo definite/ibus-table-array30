@@ -84,7 +84,12 @@ static bool cinFile_scan(){
     key_last[0]='\0';
 
     while(fgets(buf,FILE_READ_BUFFER_SIZE, cinFile)!=NULL){
+	if (strlen(buf)<=1){
+            /* Skip empty line */
+            continue;
+        }
 	VERBOSE_PRINT("stage=%d buf=%s|\n",stage,buf);
+
 	fields_parse(buf,&fields);
 	switch(stage){
 	    case SCAN_STAGE_INIT:

@@ -3,7 +3,7 @@
 # To use: INCLUDE(BasicMacros)
 #
 #===================================================================
-# Macros: 
+# Macros:
 # STRING_TRIM(var str)
 #     var: A variable that stores the result.
 #     str: A string.
@@ -13,9 +13,11 @@
 # COMMAND_OUTPUT_TO_VARIABLE(var cmd):
 #     var: A variable that stores the result.
 #     cmd: A command.
-# 
+#
 # Store command output to a variable, without new line characters (\n and \r).
 # This macro is suitable for command that output one line result.
+# Note that the var will be set to ${var_name}-NOVALUE if cmd does not have
+# any output.
 #
 #-------------------------------------------------------------------
 # SETTING_FILE_GET_ATTRIBUTE(var attr_name setting_file [setting_sign]):
@@ -25,14 +27,14 @@
 #     setting_sign: (Optional) The symbol that separate attribute name and its value.
 #         Default value: "="
 #
-# Get attribute value from a setting file. 
+# Get attribute value from a setting file.
 # New line characters will be stripped.
 #
 #-------------------------------------------------------------------
 # DATE_FORMAT(date_var format [locale])
 #     date_var: Result date string
 #     format: date format for date(1)
-#     locale: locale of the string. 
+#     locale: locale of the string.
 #             Use current locale setting if locale is not given.
 #
 # Get date in specified format and locale.
@@ -55,7 +57,12 @@ IF(NOT DEFINED _BASIC_MACROS_CMAKE_)
 	    COMMAND ${cmd} ${ARGN}
 	    OUTPUT_VARIABLE _cmd_output
 	    )
-	STRING_TRIM(${var} ${_cmd_output})
+	IF(_cmd_output)
+	    STRING_TRIM(${var} ${_cmd_output})
+	ELSE(_cmd_output)
+	    SET(var "${var}-NOVALUE")
+	ENDIF(_cmd_output)
+	# MESSAGE("var=${var} _cmd_output=${_cmd_output}")
     ENDMACRO(COMMAND_OUTPUT_TO_VARIABLE var cmd)
 
     MACRO(SETTING_FILE_GET_ATTRIBUTE var attr_name setting_file)
@@ -76,12 +83,13 @@ IF(NOT DEFINED _BASIC_MACROS_CMAKE_)
 		BREAK()
 	    ENDIF(_matched_line)
 	ENDFOREACH(_line)
-	# MESSAGE("### _result_line=${_result_line}")
+	# MESSAGE("### _result_line=${_result_line}|")
 	IF(_result_line)
 	    STRING_TRIM(${var} "${_result_line}")
 	ELSE(_result_line)
 	    SET(${var} "")
 	ENDIF(_result_line)
+	# MESSAGE("### var=${var}|")
     ENDMACRO(SETTING_FILE_GET_ATTRIBUTE var attr_name setting_file)
 
     MACRO(DATE_FORMAT date_var format)
@@ -90,7 +98,7 @@ IF(NOT DEFINED _BASIC_MACROS_CMAKE_)
 	    SET(ENV{LC_ALL} ${_locale})
 	ENDIF(_locale)
 	COMMAND_OUTPUT_TO_VARIABLE(${date_var} date "${format}")
-    ENDMACRO(DATE_FORMAT date_var format)    
-    
+    ENDMACRO(DATE_FORMAT date_var format)
+
 ENDIF(NOT DEFINED _BASIC_MACROS_CMAKE_)
 
