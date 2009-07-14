@@ -1,5 +1,6 @@
-PRJ_VER=1.2.0.20090713
+PRJ_VER=1.2.0.20090714
 SUMMARY=Initial submit
+SERIAL=20090714
 # Changes
 Initial submit.
 
