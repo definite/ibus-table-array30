@@ -1,5 +1,12 @@
-* Tue Jul 14 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090714
+* Wed Jul 15 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090715
+Correct license.
+Revise spec file for package review [Bug 511196].
+
+
+* Wed Jul 15 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090714
 Initial submit.
+
+
 
 
 

@@ -110,7 +110,7 @@ ADD_SUBDIRECTORY(src bin)
 
 SET(PRJ_COMMON_IGNORE_FILES
     "/docs/"
-    "\\\\.cache$"  "\\\\.spec$"
+    "\\\\.cache$"  "\\\\.spec$" "Array30\\\\.txt$"
 )
 
 SET(CPACK_SOURCE_IGNORE_FILES ${CPACK_SOURCE_IGNORE_FILES} ${PRJ_COMMON_IGNORE_FILES} "/bin/"

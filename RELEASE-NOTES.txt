@@ -1,6 +1,7 @@
-PRJ_VER=1.2.0.20090714
-SUMMARY=Initial submit
-SERIAL=20090714
+PRJ_VER=1.2.0.20090715
+SUMMARY=Correct license. Revise spec file for package review [Bug 511196].
+SERIAL=20090715
 # Changes
-Initial submit.
+Correct license.
+Revise spec file for package review [Bug 511196].
 

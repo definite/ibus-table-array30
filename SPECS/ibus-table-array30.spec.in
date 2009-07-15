@@ -17,7 +17,7 @@ Requires:  ibus-table >= 1.1
 Requires(post):  ibus-table >= 1.1
 
 %description
-The Array 30 Chinese input method for ibus-table. 
+The Array 30 Chinese input method for ibus-table.
 It covers more than 70 thousands Chinese characters,
 which are listed in unicode 3.1,
 
@@ -32,12 +32,12 @@ which are listed in unicode 3.1,
 %setup -q -n %{name}-%{version}-Source
 
 %build
-%cmake -DCMAKE_INSTALL_PREFIX=%{_usr}
+%cmake -DCMAKE_INSTALL_PREFIX='%{_usr}'
 make VERBOSE=1 C_DEFINES="$RPM_OPT_FLAGS" %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+make DESTDIR=%{buildroot} INSTALL="install -p" install
 
 %post
 ibus-table-createdb -i -n %{_datadir}/ibus-table/tables/Array30.db

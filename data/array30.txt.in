@@ -1,6 +1,6 @@
 ### File header must not be modified
 ### This file must be encoded into UTF-8.
-### This table under LGPL
+### This table under GPL
 ### comments start with ### not single #
 ### Derive from the format of SCIM Table, so you can modify the table from
 ### scim-tables' table
@@ -52,7 +52,7 @@ AUTHOR = 葉光哲, 廖明德
 STATUS_PROMPT = CN
 
 ### Valid input chars.
-VALID_INPUT_CHARS = 
+VALID_INPUT_CHARS =
 
 ### Layout
 LAYOUT = us
