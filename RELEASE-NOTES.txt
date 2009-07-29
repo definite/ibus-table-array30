@@ -1,7 +1,6 @@
-PRJ_VER=1.2.0.20090715
-SUMMARY=Correct license. Revise spec file for package review [Bug 511196].
-SERIAL=20090715
+PRJ_VER=1.2.0.20090729
+SUMMARY=Correct IM English name to fix Google code issue 450.
+SERIAL=20090729
 # Changes
-Correct license.
-Revise spec file for package review [Bug 511196].
+Correct IM English name to fix Google code issue 450.
 

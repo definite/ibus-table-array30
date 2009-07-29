@@ -1,3 +1,7 @@
+* Wed Jul 29 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090729
+Correct IM English name to fix Google code issue 450.
+
+
 * Wed Jul 15 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090715
 Correct license.
 Revise spec file for package review [Bug 511196].
@@ -5,6 +9,8 @@ Revise spec file for package review [Bug 511196].
 
 * Wed Jul 15 2009 - Ding-Yi Chen <dchen at redhat.com> - 1.2.0.20090714
 Initial submit.
+
+
 
 
 

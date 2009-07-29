@@ -28,7 +28,7 @@ SERIAL_NUMBER = @SERIALNUMBER@
 ICON = Array30.png
 
 ### The default name of this table, this is needed
-NAME = Zhuyin
+NAME = Array30
 
 ### The local names of this table, this is optional
 NAME.zh_CN = 行列30
